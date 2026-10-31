@@ -1,0 +1,76 @@
+\documentclass[oneside, 12pt]{book}
+
+\usepackage[T2A]{fontenc}
+\usepackage[ukrainian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{titling}
+\usepackage[pagestyles]{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{color}
+
+\renewcommand{\bfseries}{}
+\setcounter{tocdepth}{0}
+
+\titleformat{\chapter}[display]{}{}{0pt}{\huge}
+\newpagestyle{mystyle}
+{\sethead{}{}{\thepage}}
+\pagestyle{mystyle}
+
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+
+\title{Шлях звільнення}
+\subtitle{Практичний провідник до \\ духовного просвітлення}
+\author{Автор: \href{www.adyashanti.org}{\textcolor{blue}{Adyashanti}}}
+\date{\textcopyright \hspace{0cm} 2012, Adyashanti. Усі права застережено. \\ \href{http://www.adyashanti.org/wayofliberation/}{ISBN: \textcolor{blue}{978-1-937195-17-5}}}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\thispagestyle{empty}
+\setcounter{page}{0}
+
+\chapter*{Передмова}\addcontentsline{toc}{chapter}{Передмова}
+\input{chs/prefacio.tex}
+
+\chapter*{Вступ}\addcontentsline{toc}{chapter}{Вступ}
+\input{chs/intro.tex}
+
+\chapter*{П'ять основ}\addcontentsline{toc}{chapter}{П'ять основ}
+\input{chs/ch1.tex}
+
+\chapter*{Три провідні ідеї}\addcontentsline{toc}{chapter}{Три провідні ідеї}
+\input{chs/ch2.tex}
+
+\chapter*{Основні практики}\addcontentsline{toc}{chapter}{Основні практики}
+\input{chs/ch3.tex}
+
+\chapter*{Висновок}\addcontentsline{toc}{chapter}{Висновок}
+\input{chs/conclusao.tex}
+
+\chapter*{Епілог}\addcontentsline{toc}{chapter}{Епілог}
+\input{chs/epilogo.tex}
+
+\chapter*{Стислий виклад учення}\addcontentsline{toc}{chapter}{Стислий виклад учення}
+\input{chs/sumarizacao.tex}
+
+\chapter*{Групи для занять}\addcontentsline{toc}{chapter}{Групи для занять}
+\input{chs/sumarizacao.tex}
+
+\chapter*{Рекомендована література}\addcontentsline{toc}{chapter}{Рекомендована література}
+\input{chs/sumarizacao.tex}
+
+\chapter*{Подяки}\addcontentsline{toc}{chapter}{Подяки}
+\input{chs/sumarizacao.tex}
+
+\chapter*{Про автора}\addcontentsline{toc}{chapter}{Про автора}
+\input{chs/sumarizacao.tex}
+
+\end{document}
