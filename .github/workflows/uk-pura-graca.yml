@@ -1,0 +1,38 @@
+name: Українська «Чиста благодать» — PDF
+
+on:
+  push:
+    branches:
+      - uk/pura-graca-poshuk
+    paths:
+      - 'pura graca/uk/**'
+      - 'README.uk.md'
+      - '.github/workflows/uk-pura-graca.yml'
+  pull_request:
+    paths:
+      - 'pura graca/uk/**'
+      - 'README.uk.md'
+      - '.github/workflows/uk-pura-graca.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pdf:
+    name: Збірка українського PDF
+    runs-on: ubuntu-latest
+    steps:
+      - name: Отримати вихідні файли
+        uses: actions/checkout@v4
+
+      - name: Встановити XeLaTeX та українські шрифти
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends texlive-xetex texlive-lang-cyrillic fonts-dejavu-core
+
+      - name: Перевірити PDF-збірку
+        working-directory: "pura graca/uk"
+        run: |
+          xelatex -interaction=nonstopmode -halt-on-error chysta-blahodat.tex
+          test -s chysta-blahodat.pdf
