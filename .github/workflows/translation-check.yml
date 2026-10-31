@@ -1,0 +1,25 @@
+name: Перевірка українського перекладу
+on:
+  push:
+    paths:
+      - 'ashtavakra gita/uk/**'
+      - 'ashtavakra gita/chs/**'
+      - 'scripts/check_translation.py'
+      - '.github/workflows/translation-check.yml'
+  pull_request:
+    paths:
+      - 'ashtavakra gita/uk/**'
+      - 'ashtavakra gita/chs/**'
+      - 'scripts/check_translation.py'
+      - '.github/workflows/translation-check.yml'
+jobs:
+  verses:
+    name: Звірення нумерації
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Отримати джерела
+        uses: actions/checkout@v4
+      - name: Перевірити відповідність
+        run: python3 scripts/check_translation.py
