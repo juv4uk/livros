@@ -29,7 +29,7 @@ jobs:
       - name: Встановити XeLaTeX та українські шрифти
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends texlive-xetex texlive-lang-cyrillic fonts-dejavu-core
+          sudo apt-get install -y --no-install-recommends texlive-xetex texlive-lang-cyrillic texlive-fonts-recommended fonts-dejavu-core
 
       - name: Перевірити PDF-збірку
         working-directory: "pura graca/uk"
